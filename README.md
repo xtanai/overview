@@ -27,9 +27,7 @@
 ## 🎥 Recommended Hardware
 
 **MotionCoder** supports **three sensor coupling options**—depending on your **budget** and desired **quality**.
-For details and recommendations, see the documentation on GitHub:
-
-👉 [Sensor Guide](https://github.com/xtanai/sensor-guide)
+For details and recommendations, see the documentation on GitHub: 👉 [Sensor Guide](https://github.com/xtanai/sensor-guide)
 
 
 ## 🗺️ Roadmap
