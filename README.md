@@ -24,6 +24,17 @@
 | **Coder2Unreal**         | Plugin/bridge: gestures → Blueprint/C++ events.        | Unreal Engine         | MIT            | —            | 🟡 Planned                    | [Coder2Unreal](https://github.com/xtanai/coder2unreal)     |
 | **Coder2Dassault**       | Macro/API bridge: gestures → CAD commands.             | Dassault (SWX/CATIA)  | MIT            | —            | 🟠 Targeted for next year     | [Coder2Dassault](https://github.com/xtanai/coder2dassault) |
 
+
+**Why separate (MotionCoder ↔ Coder2#)?**
+
+* **Modularity:** MotionCoder (detection/semantics) remains independent of any target application.
+* **Reuse:** One semantics engine, many **Coder2#** adapters (CAD, DCC, and beyond).
+* **Breadth:** **100+ potential software targets** (integrations), far beyond the examples shown here.
+* **Maintainability & Scale:** Target-API changes impact only the relevant **Coder2#**, not the core.
+* **Portability:** Faster rollout to **new applications**—e.g., sign-language assistance—beyond CAD/DCC.
+
+
+
 ## 🎥 Recommended Hardware
 
 **MotionCoder** supports **three sensor coupling options**—depending on your **budget** and desired **quality**.
