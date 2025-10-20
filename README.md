@@ -1,4 +1,4 @@
-# 🔭 Overview – Hand-Tracking 3D Workflows
+# 🔭 Overview – AI Gesture Control for 3D Workflows
 
 **Description:**
 MotionCoder turns **sensor streams** into **semantic gestures/intents** in real time, then routes them to your **target software** via lightweight connectors.
