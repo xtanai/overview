@@ -1,5 +1,9 @@
 # 🔭 Overview – Hand-Tracking 3D Workflows
 
+**Description:**
+MotionCoder turns **sensor streams** into **semantic gestures/intents** in real time, then routes them to your **target software** via lightweight connectors.
+The stack is **modular** (Sensors → AI Interpretation → Connectors), **low-latency**, and optimized for **CAD/DCC**—yet portable to many other domains.
+
 ## 🎥 Layer 1 – Sensor I/O
 
 | 🧩 **Module**       | 📝 **Short Description**                                          | 🔌 **Hardware/Dependencies**               | ⚖️ **License** | ⚠️ **Notes**                             | 🚦 **Status**            | 🔗 **Link**                                                                |
