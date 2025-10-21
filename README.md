@@ -41,8 +41,9 @@ The stack is **modular** (Sensors → AI Interpretation → Connectors), **low-l
 
 ## 🎥 Recommended Hardware
 
-**MotionCoder** supports **three sensor coupling options**—depending on your **budget** and desired **quality**.
-For details and recommendations, see the documentation on GitHub: 👉 [Sensor Guide](https://github.com/xtanai/sensor-guide)
+Choose from three sensor options — **MVCore3D**, **Leap2Pose**, and **MVMono3D** — based on your **budget** and target **quality**. 
+See the GitHub docs and **recommended hardware**: 👉 [Sensor Guide](https://github.com/xtanai/sensor-guide)
+
 
 
 ## 🗺️ Roadmap
