@@ -41,8 +41,7 @@ The stack is **modular** (Sensors → AI Interpretation → Connectors), **low-l
 
 ## 🎥 Recommended Hardware
 
-Choose from three sensor options — **MVCore3D**, **Leap2Pose**, and **MVMono3D** — based on your **budget** and target **quality**. 
-See the GitHub docs and **recommended hardware**: 👉 [Sensor Guide](https://github.com/xtanai/sensor-guide)
+Choose from three sensor options — **MVCore3D**, **Leap2Pose**, and **MVMono3D** — based on your **budget** and target **quality**, with matching **hardware recommendations**. More in the GitHub docs: 👉 [Sensor Guide](https://github.com/xtanai/sensor-guide)
 
 
 
