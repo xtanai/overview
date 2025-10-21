@@ -46,8 +46,7 @@ Choose from three sensor modules — **MVCore3D**, **Leap2Pose**, and **MVMono3D
 
 ## 🗺️ Roadmap
 
-Coming soon. 🚀
-
+Coming soon. I’m still in the research phase. 🚀
 
 
 ## ❓ FAQ (Top 10)
