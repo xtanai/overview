@@ -44,6 +44,12 @@ The stack is **modular** (Sensors → AI Interpretation → Connectors), **low-l
 Choose from three sensor modules — **MVCore3D**, **Leap2Pose**, and **MVMono3D** — based on your **budget** and target **quality**, with matching **hardware recommendations**. More in the GitHub docs: 👉 [Sensor Guide](https://github.com/xtanai/sensor-guide)
 
 
+## 🗺️ Roadmap
+
+Coming soon. 🚀
+
+
+
 ## ❓ FAQ (Top 10)
 
 ### 1) Appendix: Why not just 2D?
@@ -77,6 +83,3 @@ Costs are trending down. We expect **consumer-priced, higher-quality options** o
 They stay. Habits don’t change overnight. Cameras mount neatly to the monitor/frame and **don’t get in the way**—MotionCoder **augments** existing input, it doesn’t replace it.
 
 
-## 🗺️ Roadmap
-
-Coming soon. 🚀
