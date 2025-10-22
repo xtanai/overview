@@ -29,12 +29,12 @@ The stack is **modular** (Sensors → AI Interpretation → Connectors), **low-l
 | **Coder2Dassault**       | Macro/API bridge: gestures → CAD commands.             | Dassault (SWX/CATIA)  | MIT            | —            | 🟠 Targeted for next year     | coming soon |
 
 
-**Why separate (MotionCoder ↔ Coder2#)?**
+**Why separate (MotionCoder ↔ Coder2$)?**
 
 * **Modularity:** MotionCoder (detection/semantics) remains independent of any target application.
-* **Reuse:** One semantics engine, many **Coder2#** adapters (CAD, DCC, and beyond).
+* **Reuse:** One semantics engine, many **Coder2$** adapters (CAD, DCC, and beyond).
 * **Breadth:** **100+ potential software targets** (integrations), far beyond the examples shown here.
-* **Maintainability & Scale:** Target-API changes impact only the relevant **Coder2#**, not the core.
+* **Maintainability & Scale:** Target-API changes impact only the relevant **Coder2$**, not the core.
 * **Portability:** Faster rollout to **new applications**—e.g., sign-language assistance—beyond CAD/DCC.
 
 
@@ -74,7 +74,7 @@ No. Core gestures are **beginner-friendly**. Sign-language nuances are used to i
 Everything runs **on-premises**. No cloud required. We follow **data minimization**; logs/frames can be disabled or anonymized.
 
 #### 8) Supported apps?
-Starting with **Blender** (adapter). Next targets: **Unreal, Unity, Maya, SolidWorks, Rhino/NX**, and other DCC tools. Adapters are modular (`Coder2XY`).
+Starting with **Blender** (adapter). Next targets: **Unreal, Unity, Maya, SolidWorks, Rhino/NX**, and other DCC tools. Adapters are modular (`Coder2$`).
 
 #### 9) Will high-quality hardware become cheap?
 Costs are trending down. We expect **consumer-priced, higher-quality options** over time, but timelines depend on vendors and supply—no hard promises.
