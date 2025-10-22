@@ -52,7 +52,7 @@ Coming soon. I’m still in the research phase. 🚀
 ## ❓ FAQ (Top 10)
 
 #### 1) Do I need a VR headset?
-No. MotionCoder is built for **desktop workflows** (large monitor). VR is **optional**.
+No. MotionCoder is built for **desktop workflows** (large monitor) and is generally **more efficient than a VR headset** for CAD/DCC tasks. VR support is **optional**.
 
 #### 2) Can **Meta Quest 3** do 3D hand tracking?
 You can try it, but it’s **not optimal for CAD-grade precision**. Inside-out tracking and 2D→3D lifting are fine for previews/VR UX, but suffer from **occlusion**, **drift**, **no hardware sync/trigger**, and **higher latency**.  
