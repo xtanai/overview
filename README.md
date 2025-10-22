@@ -51,34 +51,35 @@ Coming soon. I’m still in the research phase. 🚀
 
 ## ❓ FAQ (Top 10)
 
-### 1) Appendix: Why not just 2D?
-2D→3D lifting works for previews but lacks **precision/robustness** for CAD: occlusion, drift, no HW sync/trigger, higher latency. MotionCoder prioritizes **deterministic multi-view 3D capture** and **low-latency semantics**.
-
-### 2) Do I need a VR headset?
+#### 1) Do I need a VR headset?
 No. MotionCoder is built for **desktop workflows** (large monitor). VR is **optional**.
 
-### 3) What about ToF sensors?
+#### 2) Can **Meta Quest 3** do 3D hand tracking?
+You can try it, but it’s **not optimal for CAD-grade precision**. Inside-out tracking and 2D→3D lifting are fine for previews/VR UX, but suffer from **occlusion**, **drift**, **no hardware sync/trigger**, and **higher latency**.  
+MotionCoder prioritizes **deterministic multi-view 3D capture** (global-shutter/NIR) with **low-latency semantics** for reliable CAD/DCC work.
+
+#### 3) What about ToF sensors?
 Useful in constrained scenes, but often limited by **noise**, **low hand resolution**, **latency**, and **vendor lock-in**. We focus on **global-shutter/NIR multi-view** for precision.
 
-### 4) Why multiple cameras instead of one?
+#### 4) Why multiple cameras instead of one?
 Single-view suffers from **occlusion** and **scale/pose ambiguity**. Multi-view provides **stable 3D geometry**, **less drift**, and **higher intent confidence**—critical for CAD/DCC.
 
-### 5) Do I need markers or a glove?
+#### 5) Do I need markers or a glove?
 No—tracking is **markerless**. Optional aids (e.g., a **2D touch panel** or fiducials) can boost **fine precision** in special setups, but aren’t required.
 
-### 6) Do I need sign-language skills?
+#### 6) Do I need sign-language skills?
 No. Core gestures are **beginner-friendly**. Sign-language nuances are used to improve **expressiveness and disambiguation**, not as a requirement.
 
-### 7) Privacy & security?
+#### 7) Privacy & security?
 Everything runs **on-premises**. No cloud required. We follow **data minimization**; logs/frames can be disabled or anonymized.
 
-### 8) Supported apps?
+#### 8) Supported apps?
 Starting with **Blender** (adapter). Next targets: **Unreal, Unity, Maya, SolidWorks, Rhino/NX**, and other DCC tools. Adapters are modular (`Coder2XY`).
 
-### 9) Will high-quality hardware become cheap?
+#### 9) Will high-quality hardware become cheap?
 Costs are trending down. We expect **consumer-priced, higher-quality options** over time, but timelines depend on vendors and supply—no hard promises.
 
-### 10) Mouse & keyboard?
+#### 10) Mouse & keyboard?
 They stay. Habits don’t change overnight. Cameras mount neatly to the monitor/frame and **don’t get in the way**—MotionCoder **augments** existing input, it doesn’t replace it.
 
 
