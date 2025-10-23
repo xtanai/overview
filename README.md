@@ -58,7 +58,7 @@ No. MotionCoder is built for **desktop workflows** (large monitor) and is genera
 You can try it, but it’s **not optimal for CAD-grade precision**. Inside-out tracking and 2D→3D lifting are fine for previews/VR UX, but suffer from **occlusion**, **drift**, **no hardware sync/trigger**, and **higher latency**.  
 MotionCoder prioritizes **deterministic multi-view 3D capture** (global-shutter/NIR) with **low-latency semantics** for reliable CAD/DCC work.
 
-#### 3) What about ToF sensors?
+#### 3) What about LiDAR and ToF sensors?
 Useful in constrained scenes, but often limited by **noise**, **low hand resolution**, **latency**, and **vendor lock-in**. We focus on **global-shutter/NIR multi-view** for precision.
 
 #### 4) Why multiple cameras instead of one?
