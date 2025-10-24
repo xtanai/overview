@@ -6,12 +6,15 @@ The stack is **modular** (Sensors → AI Interpretation → Connectors), **low-l
 
 ## 🎥 Layer 1 – Sensor I/O
 
-| 🧩 **Module**       | 📝 **Short Description**                                          | 🔌 **Hardware/Dependencies**               | ⚖️ **License** | ⚠️ **Notes**                             | 🚦 **Status**            | 🔗 **Link**                                                                |
-| ------------------- | ------------------------------------------------------------------ | ------------------------------------------- | -------------- | ----------------------------------------- | ------------------------- | -------------------------------------------------------------------------- |
-| **MVCore3D**        | Anipose + MMPose stack with CPU tuning for optimal performance.    | Various cameras (incl. low-cost), sync, PTZ | Apache-2.0     | —                                         | 🟡 Planned                | coming soon   |
-| **Leap2Pose**       | **LeapC** ingestion → normalized poses/streams.                    | Leap Motion (Controller 1/2)                | MIT            | —                                         | 🟢 Active                 | coming soon |
-| **MVMono3D**        | Mono multi-camera pipeline (high perf, high occlusion robustness). | 3–4 mono cams, IR/filter, sync              | Apache-2.0     | —                                         | 🟠 Targeted for next year | coming soon  |
-| **TDMStrobe**       | Time-Division-Multiplexed IR strobe + camera trigger               | IR-LED arrays, MOSFET drivers, MCU          | Apache-2.0     | Designed for **MVCore3D** & **MVMono3D**  | 🟡 Planned                | coming soon   |
+| 🧩 **Module** | 📝 **Short Description**                                                                                                                    | 🔌 **Hardware / Deps**                                 | ⚖️ **License** | ⚠️ **Notes**                      | 🚦 **Status**         | 🔗 **Link** |
+| ------------- | ------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------ | -------------- | --------------------------------- | --------------------- | ----------- |
+| **MVCore3D**  | **MJPEG/YUY2 ingest** (libjpeg-turbo), Anipose + MMPose, **CPU-tuned** for plug-&-play multi-cam.                                           | USB cams (incl. low-cost), optional sync, PTZ          | Apache-2.0     | —                                 | 🟡 Planned            | coming soon |
+| **MVRaw3D**   | **RAW10/12 (Bayer/Mono) ingest**, debayer/denoise pipeline, **lower latency & higher fidelity** vs. MJPEG; GPU-accelerated where available. | Global-/rolling-shutter cams, HW sync recommended, PTZ | Apache-2.0     | —                                 | 🟡 Planned            | coming soon |
+| **Leap2Pose** | **LeapC ingestion → normalized poses/streams** with consistent joints & units.                                                              | Leap Motion Controller 1/2                             | MIT            | Desktop-first; VR optional.       | 🟢 Active             | coming soon |
+| **MVMono3D**  | **Synchronized mono multi-cam** (global shutter), high occlusion robustness & precision; IR/NIR ready.                                      | 3–4 mono cams, IR + bandpass, HW trigger/sync          | Apache-2.0     | —                                 | 🟠 Targeted next year | coming soon |
+| **TDMStrobe** | **Time-Division-Multiplexed IR strobe** + camera trigger controller.                                                                        | IR-LED arrays, MOSFET drivers, MCU                     | Apache-2.0     | Pairs with Core/Mono for NIR.     | 🟡 Planned            | coming soon |
+
+
 
 ## 🧠 Layer 2 – AI Interpretation (Pose → Intents/Gestures)
 
