@@ -58,7 +58,7 @@ Coming soon. I’m still in the research phase. 🚀
 #### 1) Can I use a VR headset?
 Yes, you can try VR, but the project is **optimized for desktop workflows**. VR is optional and not fully implemented yet; support may be added later.
 
-#### 2) Can **Meta Quest 3** do 3D hand tracking?
+#### 2) Can 'Meta Quest 3' do 3D hand tracking?
 Yes, you can try it, but it’s **not optimal for CAD-grade precision**. Inside-out tracking and 2D→3D lifting are fine for previews/VR UX, but suffer from **occlusion**, **drift**, **no hardware sync/trigger**, and **higher latency**.  
 MotionCoder prioritizes **deterministic multi-view 3D capture** (global-shutter/NIR) with **low-latency semantics** for reliable CAD/DCC work.
 
