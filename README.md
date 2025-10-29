@@ -6,6 +6,8 @@ The stack is **modular** (Sensors → AI Interpretation → Connectors), **low-l
 
 ## 🎥 Layer 1 – Sensor I/O
 
+*Note: Choose the module based on your budget!*
+
 | 🧩 **Module**  | 📝 **Short Description**                                                                                                                                                         | 🔌 **Hardware / Deps**                                                    | ⚖️ **License** | ⚠️ **Notes**                                                             | 🚦 **Status**         | 🔗 **Link** |
 | -------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------- | -------------- | ------------------------------------------------------------------------ | --------------------- | ----------- |
 | **Pi5Track3D** | **RAW10 mono ingest** auf Pi 5; GPU-/NEON-optimierte Preproc (undistort/normalize), optional On-Pi Keypoints; Stream an Host für Triangulation.                                  | **Raspberry Pi 5** (4/8 GB), 2× MIPI-CSI (OV9281 o. ä.), NVMe/USB-2.5 GbE | Apache-2.0     | Fix exposure/gain; HW-Trigger empfohlen; Jumbo MTU für Streaming.        | 🟡 Planned            | coming soon |
