@@ -15,7 +15,7 @@ The stack is **modular** (Sensors → AI Interpretation → Connectors), **low-l
 | **MVYUV3D**    | **Uncompressed YUV ingest** (**YUY2/UYVY 4:2:2**, optional **NV12 4:2:0**); lower CPU load than MJPEG, higher USB load than MONO8; triangulation **Anipose**, pose **MMPose**. | UVC cams with YUV output; stable lighting; optional soft/hard sync           | Apache-2.0     | —                                                                       | 🟠 Later              | coming soon |
 | **MVRaw3D**    | **RAW10/12 (Bayer/Mono) ingest**, debayer/denoise pipeline; **lower latency & higher fidelity** vs. MJPEG; GPU-accelerated where available.                                    | Global-/rolling-shutter cams; **HW sync recommended**                        | Apache-2.0     | —                                                                       | 🟠 Later              | coming soon |
 | **MVMono3D**   | **Synchronized mono multi-cam** (global shutter) with high occlusion robustness & precision; NIR-ready.                                                                        | 3–4 mono cams, **IR + bandpass**, **HW trigger/sync** with Power GPU         | Apache-2.0     | —                                                                       | 🟠 Targeted next year | coming soon |
-| **TDMStrobe**  | **Time-Division-Multiplexed IR strobe & camera trigger** (phase control A/B/C/D) for MV* pipelines.                                                                            | IR-LED/VCSEL arrays, MOSFET drivers, MCU                                     | Apache-2.0     | —                                                                       | 🟠 Later              | coming soon |
+| **TDMStrobe**  | **Time-Division-Multiplexed IR strobe & camera trigger** (phase control A/B/C/D) for MV* pipelines and Pi5Track3D                                                              | IR-LED/VCSEL arrays, MOSFET drivers, MCU                                     | Apache-2.0     | —                                                                       | 🟠 Later              | coming soon |
 | **Leap2Pose**  | **LeapC ingestion → normalized poses/streams** (consistent joints & units) for downstream adapters.                                                                            | Leap Motion Controller 1/2                                                   | MIT            | —                                                                       | 🟢 Active             | coming soon |
 
 
@@ -65,7 +65,7 @@ Useful in constrained scenes, but often limited by **noise**, **low hand resolut
 Single-view suffers from **occlusion** and **scale/pose ambiguity**. Multi-view provides **stable 3D geometry**, **less drift**, and **higher intent confidence**—critical for CAD/DCC.
 
 #### 5) Do I need markers or a glove?
-No—tracking is **markerless**. Optional aids (e.g., a **2D touch panel** or fiducials) can boost **fine precision** in special setups, but aren’t required.
+No — tracking is **gloveless**. Optional aids (e.g. small **fingertip/nail markers** or a **wrist reference**) and even a **2D touch panel** or fiducials can boost **fine precision** in special setups, but they’re not required.
 
 #### 6) Do I need sign-language skills?
 No. Core gestures are **beginner-friendly**. Sign-language nuances are used to improve **expressiveness and disambiguation**, not as a requirement.
