@@ -6,19 +6,17 @@ The stack is **modular** (Sensors → AI Interpretation → Connectors), **low-l
 
 ## 🎥 Layer 1 – Sensor I/O
 
-*Note: Choose the module based on your budget!*
+*Note: Choose the module based on your budget! More in the GitHub docs: 👉 [Sensor Guide](https://github.com/xtanai/sensor-guide)*
 
-| 🧩 **Module**  | 📝 **Short Description**                                                                                                                                                         | 🔌 **Hardware / Deps**                                                    | ⚖️ **License** | ⚠️ **Notes**                                                             | 🚦 **Status**         | 🔗 **Link** |
-| -------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------- | -------------- | ------------------------------------------------------------------------ | --------------------- | ----------- |
-| **Pi5Track3D** | **RAW10 mono ingest** auf Pi 5; GPU-/NEON-optimierte Preproc (undistort/normalize), optional On-Pi Keypoints; Stream an Host für Triangulation.                                  | **Raspberry Pi 5** (4/8 GB), 2× MIPI-CSI (OV9281 o. ä.), NVMe/USB-2.5 GbE | Apache-2.0     | Fix exposure/gain; HW-Trigger empfohlen; Jumbo MTU für Streaming.        | 🟡 Planned            | coming soon |
-| **MVCore3D**   | **MJPEG ingest** (libjpeg-turbo), Triangulation via **Anipose**, 2D-Keypoints via **MMPose**; **CPU-tuned** Plug-&-Play für Multi-Cam.                                           | USB-UVC Cams (auch Low-Cost), optional Sync                               | Apache-2.0     | Höhere CPU-Last durch Decode; deterministisch bei festen Auto-Settings.  | 🟠 later            | coming soon |
-| **MVYUV3D**    | **Uncompressed YUV ingest** (**YUY2/UYVY 4:2:2**, optional **NV12 4:2:0**); geringere CPU-Last als MJPEG, höhere USB-Last als MONO8; Triangulation **Anipose**, Pose **MMPose**. | UVC-Cams mit YUV-Output; stabile Beleuchtung; Soft/Hard-Sync optional     | Apache-2.0     | **libjpeg-turbo** nicht nötig; Auto-Funktionen aus ⇒ mehr Determinismus. | 🟠 later            | coming soon |
-| **MVRaw3D**    | **RAW10/12 (Bayer/Mono) ingest**, Debayer/Denoise-Pipeline; **niedrige Latenz & hohe Fidelity** gegenüber MJPEG; GPU-Beschleunigung wo möglich.                                  | Global-/Rolling-Shutter Cams; **HW-Sync empfohlen**                       | Apache-2.0     | Exakte Lens-/Noise-Parameter verbessern Keypoints deutlich.              | 🟠 later            | coming soon |
-| **Leap2Pose**  | **LeapC ingestion → normalisierte Posen/Streams** (einheitliche Joints/Units) für Downstream-Adapter.                                                                            | Leap Motion Controller 1/2                                                | MIT            | Desktop-first; VR optional.                                              | 🟢 Active             | coming soon |
-| **MVMono3D**   | **Synchrones Mono-Multi-Cam** (Global Shutter) mit hoher Okklusions-Robustheit & Präzision; NIR-tauglich.                                                                        | 3–4 Mono-Cams, **IR + Bandpass**, **HW-Trigger/Sync**                     | Apache-2.0     | Kurze Belichtung (0.3–0.8 ms), fester Gain.                              | 🟠 Targeted next year | coming soon |
-| **TDMStrobe**  | **Time-Division-Multiplexed IR-Strobe & Camera-Trigger** (Phasensteuerung A/B/C/D) für MV*-Pipelines.                                                                            | IR-LED/VCSEL Arrays, MOSFET-Treiber, MCU                                  | Apache-2.0     | Reduziert IR-Crosstalk; **850 nm Bandpass** empfohlen.                   | 🟠 later            | coming soon |
-
-
+| 🧩 **Module**  | 📝 **Short Description**                                                                                                                                                       | 🔌 **Hardware / Deps**                                                       | ⚖️ **License** | ⚠️ **Notes**                                                            | 🚦 **Status**         | 🔗 **Link** |
+| -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------- | -------------- | ----------------------------------------------------------------------- | --------------------- | ----------- |
+| **Pi5Track3D** | **RAW10 mono ingest** on Pi 5; GPU/NEON-optimized preproc (undistort/normalize), optional on-Pi keypoints; streaming to host for triangulation.                                | **Raspberry Pi 5** (4/8 GB), 2× MIPI-CSI (OV9281 etc.), NVMe / USB-to-2.5GbE | Apache-2.0     | —                                                                       | 🟡 Planned            | coming soon |
+| **MVCore3D**   | **MJPEG ingest** (libjpeg-turbo), triangulation via **Anipose**, 2D keypoints via **MMPose**; **CPU-tuned** plug-and-play for multi-cam.                                       | USB-UVC cams (incl. low-cost), optional sync                                 | Apache-2.0     | —                                                                       | 🟠 Later              | coming soon |
+| **MVYUV3D**    | **Uncompressed YUV ingest** (**YUY2/UYVY 4:2:2**, optional **NV12 4:2:0**); lower CPU load than MJPEG, higher USB load than MONO8; triangulation **Anipose**, pose **MMPose**. | UVC cams with YUV output; stable lighting; optional soft/hard sync           | Apache-2.0     | —                                                                       | 🟠 Later              | coming soon |
+| **MVRaw3D**    | **RAW10/12 (Bayer/Mono) ingest**, debayer/denoise pipeline; **lower latency & higher fidelity** vs. MJPEG; GPU-accelerated where available.                                    | Global-/rolling-shutter cams; **HW sync recommended**                        | Apache-2.0     | —                                                                       | 🟠 Later              | coming soon |
+| **MVMono3D**   | **Synchronized mono multi-cam** (global shutter) with high occlusion robustness & precision; NIR-ready.                                                                        | 3–4 mono cams, **IR + bandpass**, **HW trigger/sync** with Power GPU         | Apache-2.0     | —                                                                       | 🟠 Targeted next year | coming soon |
+| **TDMStrobe**  | **Time-Division-Multiplexed IR strobe & camera trigger** (phase control A/B/C/D) for MV* pipelines.                                                                            | IR-LED/VCSEL arrays, MOSFET drivers, MCU                                     | Apache-2.0     | —                                                                       | 🟠 Later              | coming soon |
+| **Leap2Pose**  | **LeapC ingestion → normalized poses/streams** (consistent joints & units) for downstream adapters.                                                                            | Leap Motion Controller 1/2                                                   | MIT            | —                                                                       | 🟢 Active             | coming soon |
 
 
 ## 🧠 Layer 2 – AI Interpretation (Pose → Intents/Gestures)
@@ -44,12 +42,6 @@ The stack is **modular** (Sensors → AI Interpretation → Connectors), **low-l
 * **Breadth:** **100+ potential software targets** (integrations), far beyond the examples shown here.
 * **Maintainability & Scale:** Target-API changes impact only the relevant **Coder2$**, not the core.
 * **Portability:** Faster rollout to **new applications**—e.g., sign-language assistance—beyond CAD/DCC.
-
-
-
-## 🎥 Recommended Sensors
-
-Choose from three sensor modules — **MVCore3D**, **Leap2Pose**, and **MVMono3D** — based on your **budget** and target **quality**, with matching **hardware recommendations**. More in the GitHub docs: 👉 [Sensor Guide](https://github.com/xtanai/sensor-guide)
 
 
 ## 🗺️ Roadmap
