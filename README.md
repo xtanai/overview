@@ -5,6 +5,8 @@
 MotionCoder turns **sensor streams** into **semantic gestures/intents** in real time, then routes them to your **target software** via lightweight connectors.
 The stack is **modular** (Sensors → AI Interpretation → Connectors), **low-latency**, and optimized for **CAD/DCC**—yet portable to many other domains.
 
+For a quick preview, check this [YouTube example](https://www.youtube.com/watch?v=923FFy5cI-4). It represents only **~3–5%** of what we’re building—and the demo hardware is imprecise. MotionCoder aims for **complete, precise gesture coverage**, informed by my practical experience in gesture design and control.
+
 ## 🎥 Layer 1 – Sensor I/O
 
 *Note: Choose the module based on your budget! More in the GitHub docs: 👉 [Sensor Guide](https://github.com/xtanai/sensor-guide)*
