@@ -7,7 +7,8 @@ The stack is **modular** (Sensors → AI Interpretation → Connectors), **low-l
 
 For a quick preview, check this <a href="https://www.youtube.com/watch?v=923FFy5cI-4" target="_blank">YouTube example</a>. It represents only **~3–5%** of what we’re building—and the demo hardware is imprecise. MotionCoder aims for **complete, precise gesture coverage**, informed by my practical experience in gesture design and control.
 
-[YouTube example](https://www.youtube.com/watch?v=923FFy5cI-4){: target="_blank"} dsyxa
+[YouTube example](https://www.youtube.com/watch?v=923FFy5cI-4){:target="_blank" rel="noopener noreferrer"}
+
 
 ## 🎥 Layer 1 – Sensor I/O
 
