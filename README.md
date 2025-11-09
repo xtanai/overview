@@ -9,6 +9,9 @@ For a quick preview, check this <a href="https://www.youtube.com/watch?v=923FFy5
 
 [YouTube example](https://www.youtube.com/watch?v=923FFy5cI-4){:target="_blank" rel="noopener noreferrer"}
 
+<a href="https://www.youtube.com/watch?v=923FFy5cI-4" target="_blank" rel="noopener noreferrer">YouTube example</a>
+
+
 
 ## 🎥 Layer 1 – Sensor I/O
 
