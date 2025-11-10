@@ -5,7 +5,7 @@
 MotionCoder turns **sensor streams** into **semantic gestures/intents** in real time, then routes them to your **target software** via lightweight connectors.
 The stack is **modular** (Sensors → AI Interpretation → Connectors), **low-latency**, and optimized for **CAD/DCC**—yet portable to many other domains.
 
-For a quick look, see this [YouTube example](https://www.youtube.com/watch?v=923FFy5cI-4). It represents just **~2–3%** of the intended capability, and the demo hardware isn’t precise. MotionCoder targets **full, high-precision gesture coverage**, informed by my practical experience in gesture design and control.
+For a quick preview, here’s [YouTube example](https://www.youtube.com/watch?v=923FFy5cI-4). It demonstrates only **~2–3%** of the intended capability and runs on non-precision demo hardware. MotionCoder’s goal is **full, high-accuracy gesture coverage**, informed by my hands-on experience in gesture design and control.
 
 
 ## 🎥 Layer 1 – Sensor I/O
@@ -19,7 +19,7 @@ For a quick look, see this [YouTube example](https://www.youtube.com/watch?v=923
 | **MVYUV3D**    | **Uncompressed YUV ingest** (**YUY2/UYVY 4:2:2**, optional **NV12 4:2:0**); lower CPU load than MJPEG, higher USB load than MONO8; triangulation **Anipose**, pose **MMPose**. | UVC cams with YUV output; stable lighting; optional soft/hard sync           | Apache-2.0     | —                                                                       | 🟠 Later              | coming soon |
 | **MVRaw3D**    | **RAW10/12 (Bayer/Mono) ingest**, debayer/denoise pipeline; **lower latency & higher fidelity** vs. MJPEG; GPU-accelerated where available.                                    | Global-/rolling-shutter cams; **HW sync recommended**                        | Apache-2.0     | —                                                                       | 🟠 Later              | coming soon |
 | **MVMono3D**   | **Synchronized mono multi-cam** (global shutter) with high occlusion robustness & precision; NIR-ready.                                                                        | 3–4 mono cams with Interface **SFP+**, GPUDirect                             | Apache-2.0     | —                                                                       | 🟠 Targeted next year | coming soon |
-| **TDMStrobe**  | **Time-Division-Multiplexed IR strobe & camera trigger** (phase control A/B/C/D) for MV* pipelines and Pi5Track3D                                                              | IR-LED/VCSEL arrays, MOSFET drivers, MCU                                     | Apache-2.0     | —                                                                       | 🟡 Planned            | coming soon |
+| **TDMStrobe**  | **Time-Division-Multiplexed IR strobe & camera trigger** (phase control A/B/C/D) for MV* pipelines and Pi5Track3D                                                              | IR-LED/VCSEL arrays, MOSFET drivers, MCU (EPS32)                             | Apache-2.0     | —                                                                       | 🟡 Planned            | coming soon |
 | **Leap2Pose**  | **LeapC ingestion → normalized poses/streams** (consistent joints & units) for downstream adapters.                                                                            | Leap Motion Controller 1/2                                                   | MIT            | —                                                                       | 🟢 Active             | coming soon |
 
 
@@ -46,6 +46,12 @@ For a quick look, see this [YouTube example](https://www.youtube.com/watch?v=923
 * **Breadth:** **100+ potential software targets** (integrations), far beyond the examples shown here.
 * **Maintainability & Scale:** Target-API changes impact only the relevant **Coder2$**, not the core.
 * **Portability:** Faster rollout to **new applications**—e.g., sign-language assistance—beyond CAD/DCC.
+
+
+## 🕹️ Peripherals
+| 🧩 **Module** | 📝 **Short Description**                                                                                                                                                                                     | 🔌 **Hardware / Deps**                                                                                                                                                                           | ⚖️ **License** | ⚠️ **Notes**                                                                                                        | 🚦 **Status** | 🔗 **Link** |
+| ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | -------------- | ------------------------------------------------------------------------------------------------------------------- | ------------- | ----------- |
+| **Pen3D**     | ESP32-S3 BLE pen with **2 buttons / optional scroll wheel**, **dual markers** for optical pose, **haptic motor**, **titanium tube** chassis. Low-latency notifications to host; no IR emitter (camera-safe). | ESP32-S3 module, 2× tact switch or 1× rotary encoder, coin-vibe motor + driver, LiPo 150–300 mAh + charger (MCP73831/TP4056), power switch, passive markers (AprilTag/reflective), Ti tube, PCB. | Apache-2.0     | BLE GATT (notify); deep-sleep wake-on-button; optional USB-CDC debug. Designed to coexist with 850 nm NIR tracking. | 🟡 Planned    | coming soon |
 
 
 ## 🗺️ Roadmap
