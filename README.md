@@ -5,10 +5,11 @@
 MotionCoder turns **sensor streams** into **semantic gestures/intents** in real time, then routes them to your **target software** via lightweight connectors.
 The stack is **modular** (Sensors → AI Interpretation → Connectors), **low-latency**, and optimized for **CAD/DCC**—yet portable to many other domains.
 
-For a quick preview, here’s [YouTube example](https://www.youtube.com/watch?v=923FFy5cI-4). It demonstrates only **~2–3%** of the intended capability and runs on non-precision demo hardware. MotionCoder’s goal is **full, high-accuracy gesture coverage**, informed by my hands-on experience in gesture design and control.
-
+For a quick preview, here’s a short [YouTube example](https://www.youtube.com/watch?v=923FFy5cI-4). It demonstrates only **~2–3%** of the intended capability and runs on non-precision demo hardware. MotionCoder’s goal is **full, high-accuracy gesture coverage**, informed by my hands-on experience in gesture design and control.
 
 ## 🎥 Layer 1 – Sensor I/O
+
+**What this layer does:** It **ingests camera/IMU/hand-tracker streams**, applies **on-edge preprocessing** (undistort, normalize, optional 2D keypoints), and **synchronizes** frames across devices. Outputs are **normalized pose/keypoint streams** or **compressed video feeds** for triangulation on the host.
 
 *Note: Choose the module based on your budget! More in the GitHub docs: 👉 [Sensor Guide](https://github.com/xtanai/sensor-guide)*
 
@@ -25,12 +26,16 @@ For a quick preview, here’s [YouTube example](https://www.youtube.com/watch?v=
 
 ## 🧠 Layer 2 – AI Interpretation (Pose → Intents/Gestures)
 
+**What this layer does:** It converts **poses/keypoints** into **high-level intents** using **gesture grammars**, **state machines**, and **context rules** (tool modes, constraints, safety). It handles **debounce**, **disambiguation**, and **confidence scoring**, producing **deterministic, low-latency events**.
+
 | 🧩 **Module**        | 📝 **Short Description**                                 | 🔁 **I/O**                  | ⚖️ **License** | ⚠️ **Notes** | 🚦 **Status**  | 🔗 **Link**                                                                   |
 | -------------------- | --------------------------------------------------------- | ---------------------------- | -------------- | ------------ | -------------- | ------------------------------------------------------------------------------ |
 | **MotionCoder**      | Real-time gestures/intents, state machine, context logic. | Poses/keypoints from Layer 1 | Apache-2.0     | —            | 🟡 In progress | [MotionCoder](https://github.com/xtanai/motioncoder) |
 | **Pose2Gizmo**       | Poses → 3D manipulator/gizmo commands & visualization.    | Normalized poses, tool hints | MIT            | —            | 🟡 Planned     | coming soon   |
 
 ## 🔗 Layer 3 – Connectors (DCC/CAD/Engines)
+
+**What this layer does:** It maps **intents** from MotionCoder to **app-native actions** (operators, hotkeys, API calls, Blueprint/C++ events), with **non-intrusive adapters** that track upstream API changes. Each `Coder2$` module targets one ecosystem.
 
 | 🧩 **Module**           | 📝 **Short Description**                               | 🖥️ **Target System** | ⚖️ **License** | ⚠️ **Notes** | 🚦 **Status**                 | 🔗 **Link**                                                                         |
 | ------------------------ | ------------------------------------------------------ | --------------------- | -------------- | ------------ | ----------------------------- | ------------------------------------------------------------------------------------ |
@@ -49,9 +54,13 @@ For a quick preview, here’s [YouTube example](https://www.youtube.com/watch?v=
 
 
 ## 🕹️ Peripherals
-| 🧩 **Module** | 📝 **Short Description**                                                                                                                                                                                                                                                                      | 🔌 **Hardware / Deps**                                                                                                                                                                           | ⚖️ **License** | ⚠️ **Notes**                                                                                                        | 🚦 **Status** | 🔗 **Link** |
-| ------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | -------------- | ------------------------------------------------------------------------------------------------------------------- | ------------- | ----------- |
-| **Pen3D**     | Pen3D: **2 buttons + optional scroll wheel**, **dual optical markers** for precise pose, **haptic motor**, **titanium tube** chassis. Optional **left-hand companion** with **mini-joystick** and **scroll wheel**. **Low-latency host notifications**; **no IR emitter** (camera-safe).       | ESP32-S3 module, 2× tact switch, 1× rotary encoder, coin-vibe motor + driver, LiPo 150–300 mAh + charger (MCP73831/TP4056), power switch, passive markers (AprilTag/reflective), Ti tube, PCB.   | Apache-2.0     | BLE GATT (notify); deep-sleep wake-on-button; optional USB-CDC debug. Designed to coexist with 850 nm NIR tracking. | 🟡 Planned    | coming soon |
+
+**What this layer does:** Purpose-built devices that **improve ergonomics and precision** (e.g., clutch/confirm, mode switches, haptic cues). They speak **BLE/USB** and avoid IR emission to stay **camera-safe** in NIR setups.
+
+| 🧩 **Module** | 📝 **Short Description**                                                                                                                                                                                                                                                         | 🔌 **Hardware / Deps**                                                                                                                                                                           | ⚖️ **License** | ⚠️ **Notes**                                                                                                       | 🚦 **Status** | 🔗 **Link** |
+| ------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------- | ------------------------------------------------------------------------------------------------------------------- | ------------- | ----------- |
+| **Pen3D**     | **2 buttons + optional scroll wheel**, **dual optical markers** for precise pose, **haptic motor**, **titanium tube** chassis. Optional **left-hand companion** with **mini-joystick** and **scroll wheel**. **Low-latency host notifications**; **no IR emitter** (camera-safe). | ESP32-S3 module, 2× tact switch, 1× rotary encoder, coin-vibe motor + driver, LiPo 150–300 mAh + charger (MCP73831/TP4056), power switch, passive markers (AprilTag/reflective), Ti tube, PCB.    | Apache-2.0     | BLE GATT (notify); deep-sleep wake-on-button; optional USB-CDC debug. Designed to coexist with 850 nm NIR tracking. | 🟡 Planned    | coming soon |
+| **VRHeadSet** | Prefer **marker-based tracking** on the headset (e.g., 3–4 passive markers) with **cameras external to the HMD** for higher precision; **disable/ignore built-in inside-out hand tracking** for CAD-grade work.                                                                   | Works with high-res HMDs (e.g., Pimax Crystal). **No extra hand controllers required** for MotionCoder.                                                                                           | Apache-2.0     | Use with multi-view/NIR rigs for best results; inside-out alone is not sufficient for precision CAD gestures.       | 🟠 Later      | coming soon |
 
 
 ## 🗺️ Roadmap
