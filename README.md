@@ -4,7 +4,7 @@
 
 MotionCoder converts raw **sensor streams** into **semantic, low-latency gestures** and delivers them to your **CAD/DCC tools** through lightweight connectors. Built as a **modular stack** (Sensors → AI Interpretation → Connectors), it is tuned for **deterministic, high-precision workflows**—achieving **greater accuracy** than typical inside-out tracking or controller solutions (e.g., **Meta Quest 3** or **HTC Vive**), yet portable across domains.
 
-For a quick preview, here’s a short [YouTube example](https://www.youtube.com/watch?v=923FFy5cI-4). It demonstrates only **~2–3%** of the intended capability and runs on non-precision demo hardware. MotionCoder’s goal is **full, high-accuracy gesture coverage**, informed by my hands-on experience in gesture design and control.
+For a quick preview, here’s a short [YouTube example](https://www.youtube.com/watch?v=923FFy5cI-4). It demonstrates only **~2–3%** of the intended capability and runs on non-precision demo hardware. MotionCoder’s goal is **full to 100%, high-accuracy gesture coverage**, informed by my hands-on experience in gesture design and control.
 
 ## 🎥 Layer 1 – Sensor I/O
 
