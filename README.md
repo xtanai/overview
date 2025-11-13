@@ -10,7 +10,7 @@ For a quick preview, here’s a short [YouTube example](https://www.youtube.com/
 
 **What this layer does:** It **ingests camera/IMU/hand-tracker streams**, applies **on-edge preprocessing** (undistort, normalize, optional 2D keypoints), and **synchronizes** frames across devices. Outputs are **normalized pose/keypoint streams** or **compressed video feeds** for triangulation on the host.
 
-*Note: Choose the module based on your budget! More in the GitHub docs: 👉 [Sensor Guide](https://github.com/xtanai/sensor-guide)*
+*Note: Choose the module based on your budget! More in the GitHub docs: 👉 [Sensor Guide](https://github.com/xtanai/sensor-guide) Recommendation for a fast, affordable start:* **Pi5Track3D** + **TDMStrobe** + **Pi5Fusion3D**.
 
 | 🧩 **Module**  | 📝 **Short Description**                                                                                                                                                      | 🔌 **Hardware / Deps**                                                       | ⚖️ **License** | ⚠️ **Notes**                                                            | 🚦 **Status**         | 🔗 **Link** |
 | -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------- | -------------- | ----------------------------------------------------------------------- | --------------------- | ----------- |
@@ -28,7 +28,7 @@ For a quick preview, here’s a short [YouTube example](https://www.youtube.com/
 | --------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------ | -------------- | ------------------------------------------ | ------------- | ---------------------------------------------------- |
 | **Pi5Fusion3D** | **Aggregates 2–4 stereo pairs** over LAN; performs **multi-view calibration**, **bundle adjustment**, and **low-latency fusion** to produce **precise 3D key-poses** (joints + confidences + references). | Host PC (CUDA-capable GPU rec.); ZeroMQ, UDP, TCP                  | Apache-2.0     |  —                                         | 🟡 Planned    | [Pi5Fusion3D](https://github.com/xtanai/pi5fusion3d) |
 
-*Recommendation for a fast, affordable start:* **Pi5Track3D** + **TDMStrobe** + **Pi5Fusion3D**.
+
 
 
 ## 🧠 Layer 2 – AI Interpretation (Pose → Intents/Gestures)
