@@ -6,6 +6,8 @@ MotionCoder converts raw **sensor streams** into **semantic, low-latency gesture
 
 For a quick preview, here’s a short [YouTube example](https://www.youtube.com/watch?v=923FFy5cI-4). It demonstrates only **~2–3%** of the intended capability and runs on non-precision demo hardware. MotionCoder’s goal is **full to 100%, high-accuracy gesture coverage**, informed by my hands-on experience in gesture design and control.
 
+---
+
 ## 🎥 Layer 1 – Sensor I/O
 
 **What this layer does:** It **ingests camera/IMU/hand-tracker streams**, applies **on-edge preprocessing** (undistort, normalize, optional 2D keypoints), and **synchronizes** frames across devices. Outputs are **normalized pose/keypoint streams** or **compressed video feeds** for triangulation on the host.
@@ -28,8 +30,7 @@ For a quick preview, here’s a short [YouTube example](https://www.youtube.com/
 | --------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------ | -------------- | ------------------------------------------ | ------------- | ---------------------------------------------------- |
 | **Pi5Fusion3D** | **Aggregates 2–4 stereo pairs** over LAN; performs **multi-view calibration**, **bundle adjustment**, and **low-latency fusion** to produce **precise 3D key-poses** (joints + confidences + references). | Host PC (CUDA-capable GPU rec.); ZeroMQ, UDP, TCP                  | Apache-2.0     |  —                                         | 🟡 Planned    | [Pi5Fusion3D](https://github.com/xtanai/pi5fusion3d) |
 
-
-
+---
 
 ## 🧠 Layer 2 – AI Interpretation (Pose → Intents/Gestures)
 
@@ -39,6 +40,8 @@ For a quick preview, here’s a short [YouTube example](https://www.youtube.com/
 | -------------------- | --------------------------------------------------------- | ---------------------------- | -------------- | ------------ | -------------- | ------------------------------------------------------------------------------ |
 | **MotionCoder**      | Real-time gestures/intents, state machine, context logic. | Poses/keypoints from Layer 1 | Apache-2.0     | —            | 🟡 In progress | [MotionCoder](https://github.com/xtanai/motioncoder) |
 | **Pose2Gizmo**       | Poses → 3D manipulator/gizmo commands & visualization.    | Normalized poses, tool hints | MIT            | —            | 🟡 Planned     | coming soon   |
+
+---
 
 ## 🔗 Layer 3 – Connectors (DCC/CAD/Engines)
 
@@ -59,6 +62,7 @@ For a quick preview, here’s a short [YouTube example](https://www.youtube.com/
 * **Maintainability & Scale:** Target-API changes impact only the relevant **Coder2$**, not the core.
 * **Portability:** Faster rollout to **new applications**—e.g., sign-language assistance—beyond CAD/DCC.
 
+---
 
 ## 🕹️ Peripherals
 
@@ -69,11 +73,19 @@ For a quick preview, here’s a short [YouTube example](https://www.youtube.com/
 | **Pen3D**     | **2 buttons + optional scroll wheel**, **dual optical markers** for precise pose, **haptic motor**, **titanium tube** chassis. Optional **left-hand companion** with **mini-joystick** and **scroll wheel**. **Low-latency host notifications**; **no IR emitter** (camera-safe). | ESP32-S3 module, 2× tact switch, 1× rotary encoder, coin-vibe motor + driver, LiPo 150–300 mAh + charger (MCP73831/TP4056), power switch, passive markers (AprilTag/reflective), Ti tube, PCB.    | Apache-2.0     | BLE GATT (notify); deep-sleep wake-on-button; optional USB-CDC debug. Designed to coexist with 850 nm NIR tracking. | 🟡 Planned    | coming soon |
 | **VRHeadSet** | Prefer **marker-based tracking** on the headset (e.g., 3–4 passive markers) with **cameras external to the HMD** for higher precision; **disable/ignore built-in inside-out hand tracking** for CAD-grade work.                                                                   | Works with high-res HMDs (e.g., Pimax Crystal). **No extra hand controllers required** for MotionCoder.                                                                                           | Apache-2.0     | Use with multi-view/NIR rigs for best results; inside-out alone is not sufficient for precision CAD gestures.       | 🟠 Later      | coming soon |
 
+---
+
+## 📐 Vision Geometry Rules
+
+A concise collection of formulas and reference rules for camera geometry, FOV, and depth precision – see more: 👉 [Vision Geometry Rules](https://github.com/xtanai/geo_rules)
+
+---
 
 ## 🗺️ Roadmap
 
 Coming soon. I’m still in the research phase. 🚀
 
+---
 
 ## ❓ FAQ (Top 10)
 
