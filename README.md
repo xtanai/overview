@@ -13,6 +13,7 @@ For a quick preview, here’s a short [YouTube example](https://www.youtube.com/
 **What this layer does:** It **ingests camera/IMU/hand-tracker streams**, applies **on-edge preprocessing** (undistort, normalize, optional 2D keypoints), and **synchronizes** frames across devices. Outputs are **normalized pose/keypoint streams** or **compressed video feeds** for triangulation on the host.
 
 *Note: Choose the module based on your budget! More in the GitHub docs: 👉 [Sensor Guide](https://github.com/xtanai/sensor-guide).*
+
 *Recommendation for a fast, affordable start:* **Pi5Track3D** + **TDMStrobe** + **Pi5Fusion3D**.*
 
 | 🧩 **Module**  | 📝 **Short Description**                                                                                                                                                      | 🔌 **Hardware / Deps**                                                       | ⚖️ **License** | ⚠️ **Notes**                                                            | 🚦 **Status**         | 🔗 **Link** |
