@@ -2,9 +2,9 @@
 
 ## Description
 
-MotionCoder converts raw **sensor streams** into **semantic, low-latency gestures** and delivers them to your **CAD/DCC tools** through lightweight connectors. Built as a **modular stack** (Sensors → AI Interpretation → Connectors), it is tuned for **deterministic, high-precision workflows**—achieving **greater accuracy** than typical inside-out tracking or controller solutions (e.g., **Meta Quest 3** or **HTC Vive**), yet portable across domains.
+MotionCoder converts raw **sensor streams** into **semantic, low-latency gestures** and delivers them to your **CAD/DCC tools** through lightweight connectors. Built as a **modular stack** (Sensors → AI Interpretation → Connectors), it is tuned for **deterministic, high-precision workflows**—achieving **greater accuracy** than typical inside-out tracking or controller solutions (e.g., **Leap Motion**, **Kinect**, **Meta Quest 3** or **HTC Vive**), yet portable across domains.
 
-For a quick preview, here’s a short [YouTube example](https://www.youtube.com/watch?v=923FFy5cI-4). It demonstrates only **~2–3%** of the intended capability and runs on non-precision demo hardware. MotionCoder’s goal is **full to 100%, high-accuracy gesture coverage**, informed by my hands-on experience in gesture design and control.
+For a quick preview, here’s a short [YouTube example](https://www.youtube.com/watch?v=923FFy5cI-4). It demonstrates only **~2–3%** of the intended capability and runs on non-precision demo hardware **Leap Motion old version**. MotionCoder’s goal is **full to 100%, high-accuracy gesture coverage**, informed by my hands-on experience in gesture design and control.
 
 ---
 
@@ -22,7 +22,7 @@ For a quick preview, here’s a short [YouTube example](https://www.youtube.com/
 | **MVRAW3D**    | **RAW10/12 (Bayer/Mono) ingest**, debayer/denoise pipeline; **lower latency & higher fidelity** vs. MJPEG; GPU-accelerated where available.                                    | Global-/rolling-shutter cams; **HW sync recommended**                        | Apache-2.0     | —                                                                       | 🟠 Later              | coming soon |
 | **MVMono3D**   | **Synchronized mono multi-cam** (global shutter) with high occlusion robustness & precision; only RAW12 for GPUDirect.                                                         | 3–4 mono cams only RAW12 with Interface **SFP+**                             | Apache-2.0     | —                                                                       | 🟠 Targeted next year | coming soon |
 | **TDMStrobe**  | **Time-Division-Multiplexed IR strobe & camera trigger** (phase control A/B/C/D) for MV* pipelines and Pi5Track3D                                                              | IR-LED/VCSEL arrays, MOSFET drivers, MCU (ESP32)                             | Apache-2.0     | —                                                                       | 🟡 Planned            |  [TDMStrobe](https://github.com/xtanai/tdmstrobe) |
-| **Leap2Pose**  | **LeapC ingestion → normalized poses/streams** (consistent joints & units) for downstream adapters.                                                                            | Leap Motion Controller 1/2                                                   | MIT            | —                                                                       | 🟢 Active             | coming soon |
+| **Leap2Pose**  | **LeapC ingestion → normalized poses/streams** (consistent joints & units) for downstream adapters.                                                                            | Leap Motion Controller 1/2                                                   | MIT            | Not recommended for production – many limitations, therefore deprecated | 🔴 Deprecated         | none |
 
 ### Host-side fusion (between Sensor I/O and Host)
 
