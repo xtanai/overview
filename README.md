@@ -26,7 +26,9 @@ For a quick preview, here’s a short [YouTube example](https://www.youtube.com/
 | **TDMStrobe**  | **Time-Division-Multiplexed IR strobe & camera trigger** (phase control A/B/C/D) for MV* pipelines and EdgeTrack                                                               | IR-LED/VCSEL arrays, MOSFET drivers, MCU (ESP32)                             | Apache-2.0     | —                                                                       | 🟡 Planned            |  [TDMStrobe](https://github.com/xtanai/tdmstrobe) |
 | **Leap2Pose**  | **LeapC ingestion → normalized poses/streams** (consistent joints & units) for downstream adapters.                                                                            | Leap Motion Controller 1/2                                                   | MIT            | Not recommended for production – many limitations, therefore deprecated | 🔴 Canceled           | none |
 
-### Host-side fusion (between Sensor I/O and Host)
+---
+
+## Layer 2 – Host-side fusion (between Sensor I/O and Host)
 
 | 🧩 **Module**   | 📝 **Short Description**                                                                                                                                                                                 | 🖥️ **Host Hardware**                                                 | ⚖️ **License** | ⚠️ **Notes**                             | 🚦 **Status** | 🔗 **Link**                                          |
 | --------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------ | -------------- | ------------------------------------------ | ------------- | ---------------------------------------------------- |
@@ -34,7 +36,7 @@ For a quick preview, here’s a short [YouTube example](https://www.youtube.com/
 
 ---
 
-## 🧠 Layer 2 – AI Interpretation (Pose → Intents/Gestures)
+## 🧠 Layer 3 – AI Interpretation (Pose → Intents/Gestures)
 
 **What this layer does:** It converts **poses/keypoints** into **high-level intents** using **gesture grammars**, **state machines**, and **context rules** (tool modes, constraints, safety). It handles **debounce**, **disambiguation**, and **confidence scoring**, producing **deterministic, low-latency events**.
 
@@ -45,7 +47,7 @@ For a quick preview, here’s a short [YouTube example](https://www.youtube.com/
 
 ---
 
-## 🔗 Layer 3 – Connectors (DCC/CAD/Engines)
+## 🔗 Layer 4 – Connectors (DCC/CAD/Engines)
 
 **What this layer does:** It maps **intents** from MotionCoder to **app-native actions** (operators, hotkeys, API calls, Blueprint/C++ events), with **non-intrusive adapters** that track upstream API changes. Each `Coder2$` module targets one ecosystem.
 
