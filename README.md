@@ -28,7 +28,7 @@ For a quick preview, here’s a short [YouTube example](https://www.youtube.com/
 
 ---
 
-## Layer 2 – Host-side fusion (between Sensor I/O and Host)
+## 🔗 Layer 2 – Host-side fusion (between Sensor I/O and Host)
 
 **What this layer does:** It runs on the host PC and sits between capture and semantics. It **aggregates 2–4 stereo pairs** over LAN, performs **time synchronization**, **multi-view calibration refinement** (incl. bundle adjustment), and **low-latency fusion/filtering** to output **precise, time-consistent 3D key-poses** (joints + confidences + references). The result is a **single canonical pose stream** optimized for deterministic real-time control.
 
@@ -49,7 +49,7 @@ For a quick preview, here’s a short [YouTube example](https://www.youtube.com/
 
 ---
 
-## 🔗 Layer 4 – Connectors (DCC/CAD/Engines)
+## 🔌 Layer 4 – Connectors (DCC/CAD/Engines)
 
 **What this layer does:** It maps **intents** from MotionCoder to **app-native actions** (operators, hotkeys, API calls, Blueprint/C++ events), with **non-intrusive adapters** that track upstream API changes. Each `Coder2$` module targets one ecosystem.
 
