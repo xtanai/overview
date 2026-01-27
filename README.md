@@ -1,10 +1,10 @@
-# 🔭 Overview – AI Gesture Control for 3D Workflows
+# 🔭 Overview – High-Precision Gesture Control for 3D Authoring
 
 ## Description
 
-MotionCoder converts raw **sensor streams** into **semantic, low-latency gestures** and delivers them to your **CAD/DCC tools** through lightweight connectors. Built as a **modular stack** (Sensors → AI Interpretation → Connectors), it is tuned for **deterministic, high-precision workflows**—achieving **greater accuracy** than typical inside-out tracking or controller solutions (e.g., **Leap Motion**, **Kinect**, **Meta Quest 3** or **HTC Vive**), yet portable across domains.
+MotionCoder converts raw **sensor streams** into **semantic, low-latency gesture commands** for **CAD/DCC and 3D authoring workflows**. The system is built as a modular stack (**Sensors → AI Interpretation → Connectors**) and is optimized for **stable timing**, **repeatable interactions**, and **professional productivity**—especially in workflows where “flaky” input is unacceptable.
 
-For a quick preview, here’s a short [YouTube example](https://www.youtube.com/watch?v=923FFy5cI-4). It demonstrates only **~2–3%** of the intended capability and runs on non-precision demo hardware **Leap Motion old version**. MotionCoder’s goal is **full to 100%, high-accuracy gesture coverage**, informed by my hands-on experience in gesture design and control.
+Watch a short [YouTube example](https://www.youtube.com/watch?v=923FFy5cI-4) for an early preview. This prototype demonstrates only a small portion of the roadmap and runs on demo-grade hardware; it exists to communicate the interaction idea. MotionCoder’s goal is to scale this into a robust, high-accuracy, editor-focused gesture layer with domain-specific mappings and reliable command semantics.
 
 ---
 
