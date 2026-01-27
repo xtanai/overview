@@ -8,7 +8,7 @@ Watch a short [YouTube example](https://www.youtube.com/watch?v=923FFy5cI-4) for
 
 ---
 
-## 🎥 Layer 1 – Sensor I/O
+## 🎥 Layer 1 – Capture
 
 **What this layer does:** It **ingests camera/IMU/hand-tracker streams**, applies **on-edge preprocessing** (undistort, normalize, optional 2D keypoints), and **synchronizes** frames across devices. Outputs are **normalized pose/keypoint streams** or **compressed video feeds** for triangulation on the host.
 
@@ -20,17 +20,17 @@ Watch a short [YouTube example](https://www.youtube.com/watch?v=923FFy5cI-4) for
 
 ---
 
-## 🔗 Layer 2 – Host-side fusion (between Sensor I/O and Host)
+## 🔗 Layer 2 – Host-side fusion
 
 **What this layer does:** It runs on the host PC and sits between capture and semantics. It **aggregates 2–4 stereo pairs** over LAN, performs **time synchronization**, **multi-view calibration refinement** (incl. bundle adjustment), and **low-latency fusion/filtering** to output **precise, time-consistent 3D key-poses** (joints + confidences + references). The result is a **single canonical pose stream** optimized for deterministic real-time control.
 
-| 🧩 **Module**   | 📝 **Short Description**                                                                                                                                                                                 | 🖥️ **Host Hardware**                                                 | ⚖️ **License** | ⚠️ **Notes**                             | 🚦 **Status** | 🔗 **Link**                                          |
+| 🧩 **Module**   | 📝 **Short Description**                                                                                                                                                                                 | 🖥️ **Host**                                                       | ⚖️ **License** | ⚠️ **Notes**                             | 🚦 **Status** | 🔗 **Link**                                          |
 | --------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------ | -------------- | ------------------------------------------ | ------------- | ---------------------------------------------------- |
 | **CoreFusion**  | **Aggregates 2–4 stereo pairs** over LAN; performs **multi-view calibration**, **bundle adjustment**, and **low-latency fusion** to produce **precise 3D key-poses** (joints + confidences + references). | Host PC (CUDA-capable GPU rec.); ZeroMQ, UDP, TCP                  | Apache-2.0     |  —                                         | 🟡 Planned    | [CoreFusion](https://github.com/xtanai/corefusion) |
 
 ---
 
-## 🧠 Layer 3 – AI Interpretation (Pose → Intents/Gestures)
+## 🧠 Layer 3 – AI Interpretation 
 
 **What this layer does:** It converts **poses/keypoints** into **high-level intents** using **gesture grammars**, **state machines**, and **context rules** (tool modes, constraints, safety). It handles **debounce**, **disambiguation**, and **confidence scoring**, producing **deterministic, low-latency events**.
 
@@ -41,7 +41,7 @@ Watch a short [YouTube example](https://www.youtube.com/watch?v=923FFy5cI-4) for
 
 ---
 
-## 🔌 Layer 4 – Connectors (DCC/CAD/Engines)
+## 🔌 Layer 4 – Connectors 
 
 **What this layer does:** It maps **intents** from MotionCoder to **app-native actions** (operators, hotkeys, API calls, Blueprint/C++ events), with **non-intrusive adapters** that track upstream API changes. Each `Coder2$` module targets one ecosystem.
 
