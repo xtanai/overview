@@ -4,7 +4,7 @@
 
 MotionCoder converts raw **sensor streams** into **semantic, low-latency gesture commands** for **CAD/DCC and 3D authoring workflows**. The system is built as a modular stack (**Sensors → AI Interpretation → Connectors**) and is optimized for **stable timing**, **repeatable interactions**, and **professional productivity**—especially in workflows where “flaky” input is unacceptable.
 
-Watch a short [YouTube example](https://www.youtube.com/watch?v=923FFy5cI-4) for an early preview. This prototype demonstrates only a small portion of the roadmap and runs on demo-grade hardware; it exists to communicate the interaction idea. MotionCoder’s goal is to scale this into a robust, high-accuracy, editor-focused gesture layer with domain-specific mappings and reliable command semantics.
+Watch a short [YouTube example](https://www.youtube.com/watch?v=XOO9rzbsx1E) for an early preview. This prototype demonstrates only a small portion of the roadmap and runs on demo-grade hardware; it exists to communicate the interaction idea. MotionCoder’s goal is to scale this into a robust, high-accuracy, editor-focused gesture layer with domain-specific mappings and reliable command semantics.
 
 ---
 
