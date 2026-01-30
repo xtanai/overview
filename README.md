@@ -6,6 +6,21 @@ MotionCoder converts raw **sensor streams** into **semantic, low-latency gesture
 
 Watch a short [YouTube example](https://www.youtube.com/watch?v=XOO9rzbsx1E) for an early preview. This prototype demonstrates only a small portion of the roadmap and runs on demo-grade hardware; it exists to communicate the interaction idea. MotionCoder’s goal is to scale this into a robust, high-accuracy, editor-focused gesture layer with domain-specific mappings and reliable command semantics.
 
+### Layered AI Concept
+
+MotionCoder’s AI is intentionally split into **three layers**, so each stage can use the most suitable model, remain independently upgradable, and integrate cleanly with different sensor setups:
+
+1. **Layer 1 — Geometry & Recognition**
+   Converts raw sensor signals into **stable geometric primitives** (e.g., keypoints, pose, markers, tool pose) and performs first-stage **recognition**.
+
+2. **Layer 2 — Fusion & Fit Geometry**
+   Combines multiple views/devices into a **time-consistent fused state** and applies **fit/constraints** to improve precision, stability, and repeatability.
+
+3. **Layer 3 — Semantics & Command Translation**
+   Translates the fused motion/geometry into **high-level, editor-safe gesture semantics**—mapped to reliable commands and domain-specific workflows.
+
+This separation keeps the pipeline **efficient**, makes integration easier across DCC/engines, and allows each AI layer to evolve without breaking the others.
+
 ---
 
 ## 🎥 Layer 1 – Capture
