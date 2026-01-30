@@ -98,7 +98,7 @@ A concise collection of formulas and reference rules for camera geometry, FOV, a
 
 ## 🗺️ Roadmap
 
-Coming soon. I’m still in the research phase. 🚀
+Coming soon. The project is currently in the research and prototyping phase. 🚀
 
 ---
 
