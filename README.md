@@ -149,20 +149,20 @@ They stay. Habits don’t change overnight. Cameras mount neatly to the monitor/
 
 ### Solution Strategies
 
-**Option A — Prefer more viewpoints over more power (recommended for 940 nm)**
+* **Option A — Prefer more viewpoints over more power (recommended for 940 nm)**
 If **940 nm illumination** is preferred (reduced visible glow), the recommended approach is to **increase the number of stereo rigs (viewpoints)** to maintain SNR while keeping **irradiance low**, rather than compensating with higher-power NIR emitters.
 
-**Option B — Side / rear placement (recommended)**
+* **Option B — Side / rear placement (recommended)**
 Mount stereo pairs **left/right and slightly behind** the workspace, aimed toward the work area. Add **one or two top stereo pairs** for occlusion-free coverage. This directs NIR **away from the eyes** while maintaining uniform scene illumination.
 Future refinement: recess-mount one stereo pair near the table center and another near the back edge for a slimmer, more robust setup.
 
-**Option C — Front placement with HMD only**
+* **Option C — Front placement with HMD only**
 If stereo pairs must face forward, operate with a **closed VR headset** (no see-through optics) so the user’s eyes are **occluded**. Baffles and interlocks are still required to protect bystanders.
 
-**Option D — IR-filtering safety eyewear**
+* **Option D — IR-filtering safety eyewear**
 Use **visible-light-transmitting eyewear** that strongly attenuates **near-IR (≈ 780–950 nm)** (specified optical density at **850 nm / 940 nm**) so users retain normal vision while IR exposure is reduced.
 
-**Option E — Side-shield eyewear (“horse-blinkers” concept)**
+* **Option E — Side-shield eyewear (“horse-blinkers” concept)**
 Provide **IR-blocking safety glasses with side shields** for operators and visitors when emitters face forward. Ensure proper **near-IR attenuation ratings** and a snug fit to block off-axis radiation.
 
 ---
