@@ -27,12 +27,13 @@ This separation keeps the pipeline **efficient**, makes integration easier acros
 
 ## 🎥 Layer 1 – Capture
 
-**What this layer does:** It **ingests camera/IMU/hand-tracker streams**, applies **on-edge preprocessing** (undistort, normalize, optional 2D keypoints), and **synchronizes** frames across devices. Outputs are **normalized pose/keypoint streams** or **compressed video feeds** for triangulation on the host.
+**What this layer does:** This layer **ingests camera/hand-tracking streams**, performs **on-edge preprocessing**, and **synchronizes** frames across devices. It outputs **normalized pose/keypoint streams and ROIs**; if optional AI pipelines are enabled, it can also publish an **H.265 video stream** for preview/segmentation or run **semantic inference directly on the edge** (e.g., via an NPU accelerator).
 
 | 🧩 **Module**  | 📝 **Short Description**                                                                                                                                                      | 🔌 **Hardware / Deps**                                                       | ⚖️ **License** | ⚠️ **Notes**                                                            | 🚦 **Status**         | 🔗 **Link** |
 | -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------- | -------------- | ----------------------------------------------------------------------- | --------------------- | ----------- |
 | **EdgeTrack**  | **RAW10 mono ingest** on Pi 5; GPU/NEON-optimized preproc                                                                                                                      | **Raspberry Pi 5** (4/8 GB), 2× MIPI-CSI (OV9281 etc.)                       | Apache-2.0     | —                                                                       | 🟡 In progress        | [EdgeTrack](https://github.com/xtanai/edgetrack) |
 | **TDMStrobe**  | **Time-Division-Multiplexed IR strobe & camera trigger** (phase control A/B/C/D) for EdgeTrack                                                                                 | IR-LED/VCSEL arrays, LED-drivers, MCU (RP2040)                               | Apache-2.0     | —                                                                       | 🟡 In progress        |  [TDMStrobe](https://github.com/xtanai/tdmstrobe) |
+| **EdgeSense**  | AI semantic segmentation & scene understanding on edge (optional pipeline beside geometry-based capture)                                                                       | RGB Camera, optional NPU/AI accelerator                                      | Apache-2.0     | —                                                                       | 🟠 Targeted for next year | coming soon |
 
 ---
 
