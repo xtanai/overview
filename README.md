@@ -13,7 +13,7 @@ This prototype demonstrates only a small portion of the planned roadmap and runs
 MotionCoder’s AI is intentionally split into **three layers**, so each stage can use the most suitable model, remain independently upgradable, and integrate cleanly with different sensor setups:
 
 1. **Layer 1 — Geometry & Recognition**
-   Converts raw sensor signals into **stable geometric primitives** (e.g., keypoints, pose, markers, tool pose) and performs first-stage **recognition**. **This layer can also work without AI**—for example using deterministic marker/pose geometry and classic vision, with AI being optional for harder cases (occlusions, ambiguous shapes, hand articulation).
+   Converts raw sensor signals into **stable geometric primitives** (e.g., keypoints, pose, markers, tool pose) and performs first-stage **recognition**. This layer is designed to work **without AI**—using deterministic stereo geometry, marker-based tracking, and classic vision. AI can be enabled optionally to handle harder cases such as **occlusions**, **ambiguous shapes**, or **fine-grained hand articulation**.
 
 2. **Layer 2 — Fusion & Fit Geometry**
    Combines multiple views/devices into a **time-consistent fused state** and applies **fit/constraints** to improve precision, stability, and repeatability.
