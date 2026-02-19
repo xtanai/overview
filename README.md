@@ -1,4 +1,4 @@
-# 🔭 Overview – High-Precision Gesture Control for 3D Authoring
+# 🔭 Overview – Real-Time Gesture Interaction for 3D Authoring
 
 ## Description
 
