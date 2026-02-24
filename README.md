@@ -39,9 +39,6 @@ This separation keeps the pipeline **efficient**, makes integration easier acros
 
 ---
 
-
----
-
 ## 🔗 Layer 2 – Host-side fusion
 
 **What this layer does:** It runs on the host PC and sits between capture and semantics. It **aggregates 2–4 stereo pairs** over LAN, performs **time synchronization**, **multi-view calibration refinement** (incl. bundle adjustment), and **low-latency fusion/filtering** to output **precise, time-consistent 3D key-poses** (joints + confidences + references). The result is a **single canonical pose stream** optimized for deterministic real-time control.
