@@ -14,20 +14,17 @@ In the longer term, the aim is to enable fast, practical creation of complex sha
 
 Over time, I want to evolve this into a robust, high-precision, editor-focused gesture layer with domain-specific mappings and reliable, deterministic command semantics—built on an open, brand-independent hardware stack.
 
-### Layered AI Concept
+---
 
-MotionCoder’s AI is intentionally split into **three layers**, so each stage can use the most suitable model, remain independently upgradable, and integrate cleanly with different sensor setups:
+## 📚 Documentation & Resources
 
-1. **Layer 1 — Geometry & Recognition**
-   Converts raw sensor signals into **stable geometric primitives** (e.g., keypoints, pose, markers, tool pose) and performs first-stage **recognition**. This layer is designed to work **without AI**—using deterministic stereo geometry, marker-based tracking, and classic vision. AI can be enabled optionally to handle harder cases such as **occlusions**, **ambiguous shapes**, or **fine-grained hand articulation**.
-
-2. **Layer 2 — Fusion & Fit Geometry**
-   Combines multiple views/devices into a **time-consistent fused state** and applies **fit/constraints** to improve precision, stability, and repeatability.
-
-3. **Layer 3 — Semantics & Command Translation**
-   Translates the fused motion/geometry into **high-level, editor-safe gesture semantics**—mapped to reliable commands and domain-specific workflows.
-
-This separation keeps the pipeline **efficient**, makes integration easier across DCC/engines, and allows each AI layer to evolve without breaking the others.
+| 📔 **Name**      | 📝 **Short Description**                                                                                                                                                                               | ⚖️ **License** | 🔗 **Link**                                                  |
+| ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | -------------- | ------------------------------------------------------------ |
+| **Introduction** | Comprehensive overview of stereo vision fundamentals: what a stereo camera is, how geometry works (baseline, disparity, FOV), and which architectural approach makes sense for different applications. | Apache-2.0     | [Introduction](https://github.com/xtanai/indro) |
+| **Sensor Guide** | Sensor selection & integration guide: how to choose the right camera module (MIPI/RAW, global shutter, optics, filters, synchronization, etc.).                                                        | Apache-2.0     | [Sensor](https://github.com/xtanai/sensor-guide)             |
+| **Infrared**     | Technical guide to controlled IR illumination: LED/VCSEL selection, driver design, optical filtering (bandpass, polarization), synchronization, and impact on stereo matching stability.               | Apache-2.0     | [Infrared](https://github.com/xtanai/ir)                     |
+| **LuxMeter**     | Practical IR illumination sizing guide without a physical luxmeter: estimate required LED power using RAW10 intensity levels (paper target + fixed camera settings).                                   | Apache-2.0     | [LuxMeter](https://github.com/xtanai/luxmeter)               |
+| **GeoRules**     | Practical stereo geometry reference: baseline vs. distance, disparity range planning, accuracy estimation, and CPU workload considerations.                                                            | Apache-2.0     | [Vision Geometry Rules](https://github.com/xtanai/geo_rules) |
 
 ---
 
@@ -40,8 +37,6 @@ This separation keeps the pipeline **efficient**, makes integration easier acros
 | **EdgeTrack**      | **RAW10 mono ingest** on Pi 5; GPU/NEON-optimized preproc                                                                                                                      | **Raspberry Pi 5** (4/8 GB), 2× MIPI-CSI (OV9281 etc.)                       | Apache-2.0     | —                                                                       | 🟡 In progress        | [EdgeTrack](https://github.com/xtanai/edgetrack) |
 | **TDMStrobe**      | **Time-Division-Multiplexed IR strobe & camera trigger** (phase control A/B/C/D) for EdgeTrack                                                                                 | IR-LED/VCSEL arrays, LED-drivers, MCU (RP2040)                               | Apache-2.0     | —                                                                       | 🟡 In progress        |  [TDMStrobe](https://github.com/xtanai/tdmstrobe) |
 | **EdgeSense**      | AI semantic segmentation & scene understanding on edge (optional pipeline beside geometry-based capture)                                                                       | RGB Camera, optional NPU/AI accelerator                                      | Apache-2.0     | —                                                                       | 🟡 Planned            | coming soon |
-| **Sensor**         | Sensor selection & integration guide: **how to choose the right camera module** (MIPI/RAW, global shutter, optics, filters, sync, etc.)                                        | Reference sensors/modules (OV9281, AR0234, …), lenses, band-pass IR          | Apache-2.0     | —                                                                       | only guide            | [Sensor](https://github.com/xtanai/sensor-guide) |
-| **LuxMeter**       | “No luxmeter” LED sizing guide: estimate IR illumination needs using **RAW10 levels** (paper target + fixed camera settings)                                                   | White matte paper target, camera with RAW10 output, controllable IR LEDs     | Apache-2.0     | —                                                                       | only guide            | [LuxMeter](https://github.com/xtanai/luxmeter) |
 
 ---
 
@@ -100,84 +95,8 @@ This separation keeps the pipeline **efficient**, makes integration easier acros
      
 ---
 
-## 📐 Vision Geometry Rules
-
-A concise collection of formulas and reference rules for camera geometry, FOV, and depth precision – see more: 👉 [Vision Geometry Rules](https://github.com/xtanai/geo_rules)
-
----
-
 ## 🗺️ Roadmap
 
 Coming soon. The project is currently in the research and prototyping phase. 🚀
 
 ---
-
-## ❓ FAQ (Top 10)
-
-#### 1) Can I use a VR headset?
-Yes, you can try VR, but the project is **optimized for desktop workflows**. VR is optional and not fully implemented yet; support may be added later.
-
-#### 2) Can 'Meta Quest 3' do 3D hand tracking?
-Yes, you can try it, but it’s **not optimal for CAD-grade precision**. Inside-out tracking and 2D→3D lifting are fine for previews/VR UX, but suffer from **occlusion**, **drift**, **no hardware sync/trigger**, and **higher latency**.  
-MotionCoder prioritizes **deterministic multi-view 3D capture** (global-shutter/NIR) with **low-latency semantics** for reliable CAD/DCC work.
-
-#### 3) What about LiDAR and ToF sensors?
-Useful in constrained scenes, but often limited by **noise**, **low hand resolution**, **latency**, and **vendor lock-in**. We focus on **global-shutter/NIR multi-view** for precision.
-
-#### 4) Why multiple cameras instead of one?
-Single-view suffers from **occlusion** and **scale/pose ambiguity**. Multi-view provides **stable 3D geometry**, **less drift**, and **higher intent confidence**—critical for CAD/DCC.
-
-#### 5) Do I need markers or a glove?
-No — tracking is **gloveless**. Optional aids (e.g. small **fingertip/nail markers** or a **wrist reference**) and even a **2D touch panel** or fiducials can boost **fine precision** in special setups, but they’re not required.
-
-#### 6) Do I need sign-language skills?
-No. Core gestures are **beginner-friendly**. Sign-language nuances are used to improve **expressiveness and disambiguation**, not as a requirement.
-
-#### 7) Privacy & security?
-Everything runs **on-premises**. No cloud required. We follow **data minimization**; logs/frames can be disabled or anonymized.
-
-#### 8) Supported apps?
-Starting with **Blender** (adapter). Next targets: **Unreal, Unity, Maya, SolidWorks, Rhino/NX**, and other DCC tools. Adapters are modular (`Coder2$`).
-
-#### 9) Will high-quality hardware become cheap?
-Costs are trending down. We expect **consumer-priced, higher-quality options** over time, but timelines depend on vendors and supply—no hard promises.
-
-#### 10) Mouse & keyboard?
-They stay. Habits don’t change overnight. Cameras mount neatly to the monitor/frame and **don’t get in the way**—MotionCoder **augments** existing input, it doesn’t replace it.
-
----
-
-## Safety
-
-### NIR Illumination (850 nm vs 940 nm) & Eye Safety
-
-* **Never look into emitters.** Use black matte **baffles/shields**, aim emitters away from faces, and add **hardware interlocks** (LEDs off on loss of sync, open covers, or presence detection).
-* Keep **exposure short** (strobe pulses strictly within camera exposure) and **average irradiance low**.
-* Prefer **850 nm band-pass filters** on cameras to reduce the required LED output power.
-* **850 nm and 940 nm are both IR-A** and are **not inherently eye-safe**; safety depends on irradiance, geometry, duty cycle, distance, and exposure time (IEC 62471).
-
-### Solution Strategies
-
-**Option A — Prefer more viewpoints over more power (recommended for 940 nm)**
-- If **940 nm illumination** is preferred (reduced visible glow), the recommended approach is to **increase the number of stereo rigs (viewpoints)** to maintain SNR while keeping **irradiance low**, rather than compensating with higher-power NIR emitters.
-
-**Option B — Side / rear placement (recommended)**
-- Mount stereo pairs **left/right and slightly behind** the workspace, aimed toward the work area. Add **one or two top stereo pairs** for occlusion-free coverage. This directs NIR **away from the eyes** while maintaining uniform scene illumination.
-Future refinement: recess-mount one stereo pair near the table center and another near the back edge for a slimmer, more robust setup.
-
-**Option C — Front placement with HMD only**
-- If stereo pairs must face forward, operate with a **closed VR headset** (no see-through optics) so the user’s eyes are **occluded**. Baffles and interlocks are still required to protect bystanders.
-
-**Option D — IR-filtering safety eyewear**
-- Use **visible-light-transmitting eyewear** that strongly attenuates **near-IR (≈ 780–950 nm)** (specified optical density at **850 nm / 940 nm**) so users retain normal vision while IR exposure is reduced.
-
-**Option E — Side-shield eyewear (“horse-blinkers” concept)**
-- Provide **IR-blocking safety glasses with side shields** for operators and visitors when emitters face forward. Ensure proper **near-IR attenuation ratings** and a snug fit to block off-axis radiation.
-
----
-
-### Disclaimer
-
-Prototype hardware. Use at your own risk. Ensure eye‑safety and proper thermal design in all setups.
-
-  
