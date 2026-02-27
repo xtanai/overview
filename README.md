@@ -4,16 +4,6 @@
 
 MotionCoder converts raw **sensor streams** into **semantic, low-latency gesture commands** for **CAD/DCC and 3D authoring workflows**. The system is built as a modular stack (**Sensors → AI Interpretation → Connectors**) and is optimized for **stable timing**, **repeatable interactions**, and **professional productivity**—especially in workflows where “flaky” input is unacceptable.
 
-At the moment, there is no official demo video available, as the project is still at a very early stage. I am currently building the first mechanical stereo camera prototype. A first proper software demo is planned for around May or June.
-
-However, to get a first impression of the core idea, you can watch a short YouTube example as an early preview: [YouTube example](https://www.youtube.com/watch?v=XOO9rzbsx1E)
-
-This video shows only a small portion of the planned roadmap. It mainly illustrates the interaction concept: the person in the clip uses a standard controller, while my goal is to run the same workflows markerless - using gestures.
-
-In the longer term, the aim is to enable fast, practical creation of complex shapes and “figures” (e.g., a small character or a turtle) directly through spatial input. Doing this with conventional keyboard-and-mouse workflows is possible, but typically far more time-consuming and labor-intensive.
-
-Over time, I want to evolve this into a robust, high-precision, editor-focused gesture layer with domain-specific mappings and reliable, deterministic command semantics—built on an open, brand-independent hardware stack.
-
 ---
 
 ## 📚 Documentation & Resources
