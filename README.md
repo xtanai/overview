@@ -91,8 +91,7 @@ Over time, I want to evolve this into a robust, high-precision, editor-focused g
 | ---------------- | ---------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------ | -------------- | --------------------------------------------------------------------------------------------------------------------- | ------------- | ---------------------------------------------- | 
 | **Pen3D**        | **Tracked 3D pen input with buttons and optional haptics.**            | Optional ESP32-S3 (BLE) or mechanical.                                                                             | Apache-2.0     | BLE GATT (notify); deep-sleep wake-on-button; optional USB-CDC debug. Designed to coexist with 850 nm NIR tracking.   | 🟡 Planned    | [Pen3D](https://github.com/xtanai/pen3d)       |
 | **HMDone**       | **Minimal VR headset with external marker-based tracking only.**       | Works with high-resolution HMDs (e.g. Pimax Crystal or Valve). No extra hand controllers required for MotionCoder. | Apache-2.0     | Use with multi-view/NIR rigs for best results; inside-out tracking is intentionally ignored.                          | 🟠 Later      | [HMDone](https://github.com/xtanai/hmdone)     |
-| **HandNode**     | **Universal externally tracked hand tool (shape-agnostic).**           | Passive markers with configurable mount geometry; optional BLE button/dial module (ESP32-S3).                      | Apache-2.0     | Visibility-first marker placement; behavior defined by profiles/configuration.                                        | 🟠 Later      | [HandNode](https://github.com/xtanai/handnode) |
-     
+
 ---
 
 ## 🗺️ Roadmap
