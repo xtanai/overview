@@ -4,11 +4,13 @@
 
 MotionCoder converts raw **sensor streams** into **semantic, low-latency gesture commands** for **CAD/DCC and 3D authoring workflows**. The system is built as a modular stack (**Sensors → AI Interpretation → Connectors**) and is optimized for **stable timing**, **repeatable interactions**, and **professional productivity**—especially in workflows where “flaky” input is unacceptable.
 
-At the moment, there is no official demo video available, as the project is still at a very early stage. A first proper demo is planned for approximately May or June, as I still need to order and receive a few components. However, to get a first impression of the core idea, you can watch a short YouTube example as an early preview: [YouTube example](https://www.youtube.com/watch?v=XOO9rzbsx1E)
+At the moment, there is no official demo video available, as the project is still at a very early stage. I am currently building the first mechanical stereo camera prototype. A first proper software demo is planned for around May or June.
 
-This prototype demonstrates only a small portion of the planned roadmap. It runs on a Meta Quest 3, and its primary purpose is to communicate the interaction concept. While markerless tracking is not yet fully optimized in this early stage, improving robustness and precision without reflective markers is a core objective of the project and a key part of the roadmap.
+However, to get a first impression of the core idea, you can watch a short YouTube example as an early preview: [YouTube example](https://www.youtube.com/watch?v=XOO9rzbsx1E)
 
-My goal is to evolve this into a robust, high-precision, editor-focused gesture layer with domain-specific mappings and reliable, deterministic command semantics, implemented on an open and brand-independent hardware stack.
+This video shows only a small portion of the planned roadmap. It mainly illustrates the interaction concept: the person in the clip uses a standard controller, while my goal is to operate the same workflows markerless, using gestures.
+
+Over time, I want to evolve this into a robust, high-precision, editor-focused gesture layer with domain-specific mappings and reliable, deterministic command semantics—built on an open, brand-independent hardware stack.
 
 ### Layered AI Concept
 
