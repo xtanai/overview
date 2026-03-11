@@ -22,7 +22,7 @@ The project is currently in the **research and prototyping stage**, with a focus
 
 ---
 
-# 🧠 AI Interpretation
+# 🧠 ML Interpretation
 
 **What this layer does:**
 It converts **poses and keypoints** into **high-level intents** using **gesture grammars**, **state machines**, and **context rules** (tool modes, constraints, safety).
@@ -36,9 +36,9 @@ The layer handles:
 
 The result is a set of **deterministic, low-latency interaction events** suitable for professional applications.
 
-| 🧩 **Module**   | 📝 **Short Description**                                                      | 🔁 **I/O**                   | ⚖️ **License** | ⚠️ **Notes** | 🚦 **Status** | 🔗 **Link**                                          |
-| --------------- | ----------------------------------------------------------------------------- | ---------------------------- | -------------- | ------------ | ------------- | ---------------------------------------------------- |
-| **MotionCoder** | Real-time gesture interpretation engine with state machine and context logic. | Poses/keypoints from Layer 2 | Apache-2.0     | —            | 🟡 Planned    | [MotionCoder](https://github.com/xtanai/motioncoder) |
+| 🧩 **Module**   | 📝 **Short Description**                                                      | 🔁 **I/O**                     | ⚖️ **License** | ⚠️ **Notes** | 🚦 **Status** | 🔗 **Link**                                          |
+| --------------- | ----------------------------------------------------------------------------- | ------------------------------ | -------------- | ------------ | ------------- | ---------------------------------------------------- |
+| **MotionCoder** | Real-time gesture interpretation engine with state machine and context logic. | Poses/keypoints from EdgeTrack | Apache-2.0     | —            | 🟡 Planned    | [MotionCoder](https://github.com/xtanai/motioncoder) |
 
 ---
 
