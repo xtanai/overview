@@ -2,7 +2,7 @@
 
 ## Description
 
-**xtan.ai** explores a new approach to **precision gesture interaction for professional 3D workflows** such asdigital content creation (DCC), CAD and virtual production.
+**xtan.ai** explores a new approach to **precision gesture interaction for professional 3D workflows** such as digital content creation (DCC), CAD and virtual production.
 
 Instead of relying purely on AI-based depth estimation, the system is designed around **metric stereo geometry and deterministic tracking pipelines**. The goal is to provide **stable, low-latency spatial interaction** that can be reliably integrated into professional software tools.
 
