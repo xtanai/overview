@@ -1,4 +1,4 @@
-# Overview – Precision Gesture Interaction for 3D Creation
+# Overview – Precision Gesture Interaction
 
 ## Description
 
