@@ -22,7 +22,7 @@ The project is currently in the **research and prototyping stage**, with a focus
 
 ---
 
-# 🧠 ML Interpretation
+# 🧠 Motion Interpretation
 
 **What this layer does:**
 It converts **poses and keypoints** into **high-level intents** using **gesture grammars**, **state machines**, and **context rules** (tool modes, constraints, safety).
