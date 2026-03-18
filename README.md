@@ -16,9 +16,10 @@ The project is currently in the **research and prototyping stage**, with a focus
 
 # 📚 Documentation & Resources
 
-| 📔 **Name**      | 📝 **Short Description**                                                                              | ⚖️ **License** | 🔗 **Link**                                             |
-| ---------------- | ----------------------------------------------------------------------------------------------------- | -------------- | ------------------------------------------------------- |
-| **Introduction** | Overview of the interaction concept, MotionCoder architecture, and supported hardware configurations. | Apache-2.0     | [Introduction](./docs/intro.md) |
+| 🔗 **Link** + **Name**                                    | 📝 **Short Description**                                                                                                                                                                                                                     |  
+| --------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [Introduction](./docs/intro.md)                           | Overview of the interaction concept, MotionCoder architecture, and supported hardware configurations.                                                                                                                                        | 
+| [Limitations of Haptics](./docs/haptics-limitations.md)   | Analysis of force-feedback and haptic system trade-offs, including cost, complexity, scalability, ergonomics, and why a non-haptic workflow can be the more practical choice for desktop 3D authoring and professional interaction.          |
 
 ---
 
