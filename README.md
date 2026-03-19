@@ -6,6 +6,16 @@
 
 Instead of relying purely on AI-based depth estimation, the system is designed around **metric stereo geometry and deterministic tracking pipelines**. The goal is to provide **stable, low-latency spatial interaction** that can be reliably integrated into professional software tools.
 
+---
+
+**It is important to distinguish between two fundamentally different approaches:**
+
+1. **Direct AI based recognition from camera images**, where gestures are inferred directly from raw visual input. This approach is often less transparent, more computationally demanding, and more error prone under difficult real world conditions. It currently dominates many mainstream use cases.
+
+2. **Geometry first 3D reconstruction followed by structured recognition**, where the system first reconstructs stable and high quality 3D data without relying on AI for the initial perception stage. Only then is the resulting 3D representation passed to a higher level model, such as a GCN, for gesture interpretation. This approach is typically cleaner, more robust, and less error prone.
+
+---
+
 The architecture separates the system into several layers: hardware capture, geometric reconstruction, semantic interpretation, and application connectors. Motion data is first captured using stereo vision hardware (such as EdgeTrack rigs), reconstructed into consistent 3D keypoints, and then interpreted by MotionCoder into structured interaction commands.
 
 This modular design allows the same motion interpretation engine to be reused across many applications—from CAD modeling and animation to robotics interfaces and assistive interaction systems.
