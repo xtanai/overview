@@ -10,9 +10,9 @@ Instead of relying purely on AI-based depth estimation, the system is designed a
 
 **It is important to distinguish between two fundamentally different approaches:**
 
-1. **Direct AI based recognition from camera images**, where gestures are inferred directly from raw visual input. This approach is often less transparent, more computationally demanding, and more error prone under difficult real world conditions. It currently dominates many mainstream use cases.
+1. **Direct AI based recognition from camera images**, where gestures are inferred directly from raw visual input. This approach is often less transparent, less deterministic, and more error prone under difficult real world conditions. It currently dominates many mainstream use cases.
 
-2. **Geometry first 3D reconstruction followed by structured recognition**, where the system first reconstructs stable and high quality 3D data without relying on AI for the initial perception stage. Only then is the resulting 3D representation passed to a higher level model, such as a GCN, for gesture interpretation. This approach is typically cleaner, more robust, and less error prone.
+2. **Geometry first 3D reconstruction followed by structured recognition**, where the system first reconstructs stable, high quality 3D data without relying on AI for the initial perception stage. Only afterward is the resulting 3D representation passed to a higher level model, such as a GCN, for gesture interpretation. When the 3D signal is clean and stable, this approach is typically more robust, more transparent, and often better suited for real time use with lower error rates. It can also simplify model training, improve the usefulness of augmentation, and make it easier to scale the recognition pipeline to additional gestures or application domains.
 
 ---
 
