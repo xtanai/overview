@@ -69,7 +69,7 @@ More information about the hardware layer can be found here:
 **What this layer does:**
 It maps **interaction intents from MotionCoder** to **application-native actions** such as operators, hotkeys, API calls, or engine events.
 
-Each connector module (`Coder2$`) targets a specific software ecosystem and translates MotionCoder output into application commands.
+Each connector module (`Coder2XY`) targets a specific software ecosystem and translates MotionCoder output into application commands.
 
 | 🧩 **Module**      | 📝 **Short Description**                                 | 📲 **Target System**        | ⚖️ **License** | ⚠️ **Notes** | 🚦 **Status**                 | 🔗 **Link** |
 | ------------------ | -------------------------------------------------------- | --------------------------- | -------------- | ------------ | ----------------------------- | ----------- |
@@ -77,7 +77,7 @@ Each connector module (`Coder2$`) targets a specific software ecosystem and tran
 | **Coder2Unreal**   | Plugin bridge: gestures → Blueprint/C++ events.          | Unreal Engine               | MIT            | —            | 🟡 Planned                    | coming soon |
 | **Coder2Dassault** | Macro/API bridge: gestures → CAD commands.               | Dassault (SolidWorks/CATIA) | MIT            | —            | 🟠 Targeted for next year     | coming soon |
 
-### Why separate MotionCoder and Coder2$?
+### Why separate MotionCoder and Coder2XY?
 
 **Modularity**
 MotionCoder (gesture detection and semantics) remains independent from any target application.
