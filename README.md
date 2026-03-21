@@ -47,9 +47,9 @@ The layer handles:
 
 The result is a set of **deterministic, low-latency interaction events** suitable for professional applications.
 
-| 🧩 **Module**   | 📝 **Short Description**                                                      | 🔁 **I/O**                     | ⚖️ **License** | ⚠️ **Notes** | 🚦 **Status** | 🔗 **Link**                                          |
-| --------------- | ----------------------------------------------------------------------------- | ------------------------------ | -------------- | ------------ | ------------- | ---------------------------------------------------- |
-| **MotionCoder** | Real-time gesture interpretation engine with state machine and context logic. | Poses/keypoints from EdgeTrack | Apache-2.0     | —            | 🟡 Planned    | [MotionCoder](https://github.com/xtanai/motioncoder) |
+| 🧩 **Module**   | 📝 **Short Description**                                                      |  ⚖️ **License** | 🚦 **Status**  | 🔗 **Link**                                          |
+| --------------- | ----------------------------------------------------------------------------- |  -------------- | -------------- | ---------------------------------------------------- |
+| **MotionCoder** | Real-time gesture interpretation engine with state machine and context logic. |  Apache-2.0     |  🟡 Planned    | [MotionCoder](https://github.com/xtanai/motioncoder) |
 
 ---
 
